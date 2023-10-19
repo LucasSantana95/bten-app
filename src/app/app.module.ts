@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EquipmentsListComponent } from './components/equipments-list/equipments-list.component';
+import { EquipmentCardComponent } from './components/equipment-card/equipment-card.component';
+import { EquipmentDetailsComponent } from './components/equipment-details/equipment-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    EquipmentsListComponent
+    EquipmentsListComponent,
+    EquipmentCardComponent,
+    EquipmentDetailsComponent
   ],
   imports: [
     BrowserModule,

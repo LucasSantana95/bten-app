@@ -1,0 +1,13 @@
+<a [routerLink]="['/details', equipment.id]">
+  <div class="image-area">
+    <img src={{equipment.image}}>
+  </div>
+  <div class="info-area">
+    <p class="name">{{ equipment.name }}</p>
+    <p class="description">{{ equipment.description }}</p>
+    <p class="value">Valor: R${{ equipment.price }}</p>
+  </div>
+  <div class="rate">
+    <p>Avaliação: {{ equipment.rating }}</p>
+  </div>
+</a>
