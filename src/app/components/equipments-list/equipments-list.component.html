@@ -1,3 +1,6 @@
-<div class="list">
-  <app-equipment-card *ngFor="let dado of dados | async" [equipment]="dado"></app-equipment-card>
+<div class="list-container">
+  <h1>Produtos em Alta</h1>
+  <div class="list">
+    <app-equipment-card *ngFor="let dado of dados | async" [equipment]="dado"></app-equipment-card>
+  </div>
 </div>

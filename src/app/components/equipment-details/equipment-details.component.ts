@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Equipment } from 'src/app/equipment';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./equipment-details.component.css']
 })
 export class EquipmentDetailsComponent implements OnInit {
-  data! : any
+  data! : Equipment
   itemId!: string
 
   constructor(private service : ApiService, private route: ActivatedRoute) {}
@@ -17,7 +18,8 @@ export class EquipmentDetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.itemId = params['id'];
     });
-    this.data = this.service.getEquipmentById(this.itemId);
-
+    this.service.getEquipmentById(this.itemId).subscribe((equipment)=> {
+      this.data = equipment;
+    });
   }
 }

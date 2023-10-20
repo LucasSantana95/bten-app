@@ -1,13 +1,19 @@
 <div class="details-container">
   <div class="image-area">
-    <img src={{data.image | async}}>
+    <img src={{data.image}}>
   </div>
   <div class="info-area">
-    <p class="name">Nome do Produto: <strong>{{ data.name | async}}</strong></p>
-    <p class="description">Descrição Detalhada: <strong>{{ data.description | async}}</strong></p>
-    <p class="value">Valor: R$<strong>{{ data.price | async}}</strong></p>
+    <p class="name">Nome do Produto: <strong>{{ data.name}}</strong></p>
+    <p class="description">Descrição Detalhada: <strong>{{ data.description}}</strong></p>
+    <p class="value">Valor: R$<strong>{{ data.price}}</strong></p>
     <div class="rate">
-      <p>Avaliação: <strong>{{ data.rating | async}}</strong></p>
+      <p>Avaliação: <strong>{{ data.rating}}</strong></p>
     </div>
+    <div *ngIf="data.isAvailable ; else Unavailable">
+      <p>Disponivel para Compra</p>
+    </div>
+    <ng-template #Unavailable>
+      <p class="unavailable">Produto não disponivel</p>
+    </ng-template>
   </div>
 </div>
